@@ -1,176 +1,179 @@
- Amigo Secreto
+ <h1>Amigo Secreto</h1>
 
-Este projeto é uma aplicação web desenvolvida para facilitar a organização e realização de sorteios de Amigo Secreto de maneira simples, interativa e intuitiva.
+    Este projeto é uma aplicação web desenvolvida para facilitar a organização e realização de sorteios de Amigo Secreto de maneira simples, interativa e intuitiva.
 
-Os usuários podem adicionar nomes à lista de participantes, visualizar todos os nomes adicionados e realizar um sorteio aleatório para descobrir o amigo secreto.
+    Os usuários podem adicionar nomes à lista de participantes, visualizar todos os nomes adicionados e realizar um sorteio aleatório para descobrir o amigo secreto.
 
-📋 Funcionalidades
+📋**Funcionalidades**
 
-Adicionar nomes: Permite que o usuário insira os nomes dos participantes em um campo de texto e os adicione à lista.
+    Adicionar nomes: Permite que o usuário insira os nomes dos participantes em um campo de texto e os adicione à lista.
 
-Validar entradas: Garante que o nome não seja adicionado caso o campo esteja vazio, exibindo um alerta para o usuário.
+    Validar entradas: Garante que o nome não seja adicionado caso o campo esteja vazio, exibindo um alerta para o usuário.
 
-Visualizar a lista: Exibe em tempo real todos os nomes adicionados em uma lista na tela.
+    Visualizar a lista: Exibe em tempo real todos os nomes adicionados em uma lista na tela.
 
-Sortear amigo secreto: Realiza um sorteio aleatório entre os nomes adicionados e exibe o nome do sorteado na tela.
+    Sortear amigo secreto: Realiza um sorteio aleatório entre os nomes adicionados e exibe o nome do sorteado na tela.
 
-🖼️ Imagens do Projeto
+🛠️ **Tecnologias Utilizadas**
 
-Tela Inicial
+    HTML5: Estrutura do projeto.
 
+    CSS3: Estilização e design responsivo da interface.
 
-Exemplo da interface inicial do projeto.
+    JavaScript: Lógica e interatividade do sistema.
 
-Lista de Participantes
+📂 **Estrutura do Projeto**
 
+    .
+    ├── index.html       # Arquivo principal contendo a estrutura HTML do projeto
+    ├── style.css        # Arquivo de estilos para personalização visual
+    ├── app.js           # Arquivo com a lógica de programação
+    └── assets/          # Pasta com imagens e ícones utilizados no projeto
 
-Visualização dos nomes adicionados à lista.
+🔄 **Fluxo do Processo**
 
-Resultado do Sorteio
+    Adicionar Nome:
 
+    O usuário digita o nome de um participante no campo de entrada.
 
-Exibição do nome sorteado como amigo secreto.
+    Ao clicar no botão "Adicionar", a função adicionarAmigo() é chamada.
 
-🛠️ Tecnologias Utilizadas
+    O nome é validado, adicionado ao array amigos e exibido na lista.
 
-HTML5: Estrutura do projeto.
+    Atualizar Lista:
 
-CSS3: Estilização e design responsivo da interface.
+    Sempre que um nome é adicionado, a função atualizarLista() é executada.
 
-JavaScript: Lógica e interatividade do sistema.
+    Essa função recria os elementos da lista no DOM, refletindo o conteúdo atual do array.
 
-📂 Estrutura do Projeto
+    Sortear Amigo:
 
-.
-├── index.html       # Arquivo principal contendo a estrutura HTML do projeto
-├── style.css        # Arquivo de estilos para personalização visual
-├── app.js           # Arquivo com a lógica de programação
-└── assets/          # Pasta com imagens e ícones utilizados no projeto
+    Quando o usuário clica no botão "Sortear amigo", a função sortearAmigo() é executada.
 
-🚀 Como o Código Funciona
+    A função valida se há nomes na lista.
 
-Arquivo index.html
+    Um índice aleatório é gerado, e o nome correspondente é exibido na tela como resultado.
 
-Define a estrutura básica do projeto, incluindo:
+    Resultado Exibido:
 
-Um campo de entrada para adicionar nomes.
+    O nome sorteado aparece em destaque na tela dentro do elemento destinado ao resultado.
 
-Uma lista para exibir os participantes.
+**Como o Código Funciona**
 
-Um botão para realizar o sorteio.
+    Arquivo index.html
 
-Exemplo de código:
+        Define a estrutura básica do projeto, incluindo:
 
-<div class="input-wrapper">
-    <input type="text" id="amigo" class="input-name" placeholder="Digite um nome">
-    <button class="button-add" onclick="adicionarAmigo()">Adicionar</button>
-</div>
+        Um campo de entrada para adicionar nomes.
 
-Arquivo style.css
+        Uma lista para exibir os participantes.
 
-Aplica o design responsivo e estiliza os componentes.
+        Um botão para realizar o sorteio.
 
-Exemplo:
+        Exemplo de código:
 
-.button-add {
-    background-color: var(--color-tertiary);
-    color: var(--color-text);
-    border-radius: 0 25px 25px 0;
-}
+        <div class="input-wrapper">
+            <input type="text" id="amigo" class="input-name" placeholder="Digite um nome">
+            <button class="button-add" onclick="adicionarAmigo()">Adicionar</button>
+        </div>
 
-.button-add:hover {
-    background-color: #a1a1a1;
-}
+    Arquivo style.css
 
-Arquivo app.js
+        Aplica o design responsivo e estiliza os componentes.
 
-Função adicionarAmigo()
+        Exemplo:
 
-Captura o valor do campo de entrada.
+        .button-add {
+            background-color: var(--color-tertiary);
+            color: var(--color-text);
+            border-radius: 0 25px 25px 0;
+        }
 
-Valida se o campo não está vazio.
+        .button-add:hover {
+            background-color: #a1a1a1;
+        }
 
-Adiciona o nome ao array e atualiza a lista na tela.
+    Arquivo app.js
 
-function adicionarAmigo() {
-    const input = document.getElementById('amigo');
-    const nome = input.value.trim();
+        Função adicionarAmigo()
 
-    if (nome === '') {
-        alert('Por favor, insira um nome.');
-        return;
-    }
+        Captura o valor do campo de entrada.
 
-    amigos.push(nome);
-    atualizarLista();
-    input.value = '';
-}
+        Valida se o campo não está vazio.
 
-Função atualizarLista()
+        Adiciona o nome ao array e atualiza a lista na tela.
 
-Percorre o array de amigos e exibe os nomes na lista.
+        function adicionarAmigo() {
+            const input = document.getElementById('amigo');
+            const nome = input.value.trim();
 
-function atualizarLista() {
-    const lista = document.getElementById('listaAmigos');
-    lista.innerHTML = '';
+            if (nome === '') {
+                alert('Por favor, insira um nome.');
+                return;
+            }
 
-    amigos.forEach((amigo, index) => {
-        const item = document.createElement('li');
-        item.textContent = `${index + 1}. ${amigo}`;
-        lista.appendChild(item);
-    });
-}
+            amigos.push(nome);
+            atualizarLista();
+            input.value = '';
+        }
 
-Função sortearAmigo()
+        Função atualizarLista()
 
-Valida se há nomes na lista.
+        Percorre o array de amigos e exibe os nomes na lista.
 
-Realiza o sorteio aleatório e exibe o resultado.
+        function atualizarLista() {
+            const lista = document.getElementById('listaAmigos');
+            lista.innerHTML = '';
 
-function sortearAmigo() {
-    if (amigos.length === 0) {
-        alert('A lista de amigos está vazia. Adicione nomes antes de sortear.');
-        return;
-    }
+            amigos.forEach((amigo, index) => {
+                const item = document.createElement('li');
+                item.textContent = `${index + 1}. ${amigo}`;
+                lista.appendChild(item);
+            });
+        }
 
-    const indiceSorteado = Math.floor(Math.random() * amigos.length);
-    const amigoSorteado = amigos[indiceSorteado];
+        Função sortearAmigo()
 
-    const resultado = document.getElementById('resultado');
-    resultado.innerHTML = `🎉 O amigo sorteado é: <strong>${amigoSorteado}</strong>`;
-}
+        Valida se há nomes na lista.
 
-🚀 Como Executar o Projeto
+        Realiza o sorteio aleatório e exibe o resultado.
 
-Pré-requisitos
+        function sortearAmigo() {
+            if (amigos.length === 0) {
+                alert('A lista de amigos está vazia. Adicione nomes antes de sortear.');
+                return;
+            }
 
-Navegador web atualizado (Google Chrome, Firefox, Edge, etc.).
+            const indiceSorteado = Math.floor(Math.random() * amigos.length);
+            const amigoSorteado = amigos[indiceSorteado];
 
-Editor de texto ou IDE para personalizações (opcional).
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = `🎉 O amigo sorteado é: <strong>${amigoSorteado}</strong>`;
+        }
 
-Passos para rodar o projeto
+🚀**Como Executar**
 
-Clone o repositório ou baixe os arquivos:
+    Pré-requisitos
 
-git clone https://github.com/seu-usuario/amigo-secreto.git
+        Navegador web atualizado (Google Chrome, Firefox, Edge, etc.).
 
-Acesse o diretório do projeto:
+    Acesse o endereço no navegador de sua preferência 
+  
+   **https://amigo-secreto-sigma-livid.vercel.app/**
 
-cd amigo-secreto
+    Interaja com a aplicação:
+    Adicione nomes ao campo de texto e clique em "Adicionar".
+    
+![Tela Inicial](assets/Tela%20Inicial.png)  
+    Visualize os nomes adicionados na lista.
+    Clique em "Sortear amigo" para descobrir o sorteado.
+![Adicione nomes](assets/Tela%20Sorteiro.png)
 
-Abra o arquivo index.html no navegador.
+Possíveis Problemas e Soluções
 
-Interaja com a aplicação:
-
-Adicione nomes ao campo de texto e clique em "Adicionar".
-
-Visualize os nomes adicionados na lista.
-
-Clique em "Sortear amigo" para descobrir o sorteado.
-
-🐛 Possíveis Problemas e Soluções
-
-Problema: Nenhum nome foi adicionado, mas o sorteio foi tentado.
+    Problema: Nenhum nome foi adicionado, mas o sorteio foi tentado.
+![Adicione nomes](assets/Alerta%20insera%20um%20nome.png)
+        Solução: O sistema exibe um alerta indicando que a lista está vazia. Certifique-se de adicionar ao menos um nome antes de   realizar o sorteio.
 
 Solução: O sistema exibe um alerta indicando que a lista está vazia. Certifique-se de adicionar ao menos um nome antes de realizar o sorteio.
 
